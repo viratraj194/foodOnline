@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        @keyframes show-toast {
+            0% {
+                bottom: -100%
+            }
+            20% {
+                bottom: 100px
+            }
+            80% {
+                bottom: 100px
+            }
+            100% {
+                bottom: -100%
+            }
+        }
+        
+        .show-notification {
+            position: fixed;
+            bottom: 100%;
+            right: 20px;
+            animation-name: show-toast;
+            animation-duration: 8s;
+            z-index: 99;
+        }
+        
+    </style>
+</head>
+<body>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{message.tags}} show-notification" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            <strong>{{message}}</strong>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+</body>
+</html>
+
+
+

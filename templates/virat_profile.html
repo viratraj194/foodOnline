@@ -1,0 +1,105 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<!-- Main Section Start -->
+<div class="main-section">
+    <div class="profile">
+        <div class="profile_info">
+
+            <h2>A B O U T</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quae dignissimos vitae? Possimus obcaecati, in eius ad corporis natus consectetur nesciunt voluptatibus dolorem consequuntur nulla minus aliquid cum laudantium harum! Lorem
+                ipsum dolor sit amet consectetur adipisicing elit. Amet aliquam pariatur eius ex iure adipisci. Non doloribus optio cum odit!</p>
+
+
+        </div>
+        <div class="profile_image">
+            <img src="{% static 'images/virat.jpg' %}" alt="photo">
+        </div>
+    </div>
+    <!-- study area   -->
+    <div class="study">
+        <div class="study_ingo_bg" style=" padding: 20px; background: url({% static 'images/virat1.jpg' %}) no-repeat center / cover;">
+            <div class=" study_info text-center ">
+                <div class="edu">
+                    <div>
+                        <label>Full Name</label>
+
+                        <h4><i class="fa fa-id-badge"></i> Virat Raj</h4>
+                    </div>
+                    <div>
+                        <label>Collage Name </label>
+                        <h4><i class="fa fa-building"></i> NON</h4>
+                    </div>
+                    <div>
+                        <label>Education Level</label>
+                        <h4><i class="fa fa-book"></i> 12th Pss</h4>
+                    </div>
+                </div>
+                <div class="edu">
+                    <div>
+                        <label>Address</label>
+                        <h4><i class="fa fa-map-marker"></i> Munger</h4>
+                    </div>
+                    <div>
+                        <label>State</label>
+                        <h4><i class="	fa fa-envelope-open"></i> Bihar</h4>
+                    </div>
+                    <div>
+                        <label>Pin Code</label>
+                        <h4><i class="	fa fa-address-card"></i> 811211</h4>
+                    </div>
+
+                </div>
+                <div class="edu">
+                    <div>
+                        <label>Phone Number</label>
+                        <h4><i class="fa fa-mobile"></i> +91 7070158485</h4>
+                    </div>
+                    <div>
+                        <label>Email</label>
+                        <h4> <i class="fa fa-address-book-o"></i> rajofficial513@gmail.com</h4>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- study area   -->
+    <div class="projects">
+        <div class="project" id="1">
+            <div class="project_img">
+                <img src="{% static 'images/project1.png' %}" alt="project image">
+            </div>
+            <div class="project_info">
+                <h4>Desi Bhojan</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, excepturi.</p>
+                <a class="btn btn-outline-danger text-uppercase font-weight-bold" href="#">View</a>
+
+            </div>
+        </div>
+
+        <div class="project" id="2">
+            <div class="project_img">
+                <img src="{% static 'images/project2.png' %}" alt="project image">
+            </div>
+            <div class="project_info">
+                <h4>Pet Online</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, excepturi.</p>
+                <a class="btn btn-outline-danger text-uppercase font-weight-bold" href="#">View</a>
+            </div>
+        </div>
+
+        <div class="project" id="3">
+            <div class="project_img">
+                <img src="{% static 'images/project3.png' %}" alt="project image">
+            </div>
+            <div class="project_info">
+                <h4>children's Academy </h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, excepturi.</p>
+                <a class="btn btn-outline-danger text-uppercase font-weight-bold" href="#">View</a>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

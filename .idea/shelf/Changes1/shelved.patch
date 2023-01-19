@@ -1,0 +1,19 @@
+Index: accounts/urls.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.urls import path, include\r\nfrom . import views\r\n\r\nurlpatterns = [\r\n    path('', views.myAccount),\r\n    path('registerUser', views.registerUser, name = 'registerUser'),\r\n    path('registerVendor', views.registerVendor, name = 'registerVendor'),\r\n    path('login/', views.login, name = 'login'),\r\n    path('logout/', views.logout, name='logout'),\r\n    path('myAccount/', views.myAccount, name='myAccount'),\r\n    path('custDashboard/', views.custDashboard, name='custDashboard'),\r\n    path('vendorDashboard/', views.vendorDashboard, name='vendorDashboard'),\r\n\r\n    path('activate/<uidb64>/<token>/', views.activate, name= 'activate'),\r\n\r\n    path('forgot_password/', views.forgot_password, name='forgot_password'),\r\n    path('reset_password_validate/<uidb64>/<token>/', views.reset_password_validate, name='reset_password_validate'),\r\n    path('reset_password/', views.reset_password, name='reset_password'),\r\n    path('vendor/', include('vendor.urls')),\r\n    path('customers/',include('customers.urls'))\r\n\r\n]
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/accounts/urls.py b/accounts/urls.py
+--- a/accounts/urls.py	(revision 96926284c9862e401d33fd268829df4a7ba99d1d)
++++ b/accounts/urls.py	(date 1672647925802)
+@@ -17,6 +17,6 @@
+     path('reset_password_validate/<uidb64>/<token>/', views.reset_password_validate, name='reset_password_validate'),
+     path('reset_password/', views.reset_password, name='reset_password'),
+     path('vendor/', include('vendor.urls')),
+-    path('customers/',include('customers.urls'))
++    # path('customers/',include('customers.urls'))
+ 
+ ]
+\ No newline at end of file

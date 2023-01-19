@@ -1,0 +1,275 @@
+@keyframes show-toast {
+    0% {
+        bottom: -100%
+    }
+    20% {
+        bottom: 100px
+    }
+    80% {
+        bottom: 100px
+    }
+    100% {
+        bottom: -100%
+    }
+}
+
+.show-notification {
+    position: fixed;
+    bottom: 100%;
+    right: 20px;
+    animation-name: show-toast;
+    animation-duration: 800000000s;
+    z-index: 99;
+}
+
+.btn {
+    padding: 3px 1.75em;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.main-search.fancy .field-holder input[type="text"] {
+    color: #000000 !important;
+}
+
+table>tbody>tr>td {
+    border: none !important;
+}
+
+#opening_hours select {
+    padding: 5px 10px !important;
+}
+
+.btn-success.add_hour {
+    padding: 7px 15px 7px 15px;
+}
+
+
+/* hide radio */
+
+.payment_method [type=radio] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.payment_method label {
+    margin: 0 4px;
+    padding: 2px;
+}
+
+
+/* image style */
+
+.payment_method [type=radio]+img {
+    cursor: pointer;
+}
+
+.payment_method img {
+    padding: 5px;
+}
+
+
+/* check style */
+
+.payment_method [type=radio]:checked+img {
+    outline: 2px solid red;
+}
+
+
+/* virat raj profile style */
+
+.profile {
+    width: 1100px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    justify-content: space-evenly;
+    border-radius: 8px;
+    box-shadow: 6px 6px 6px 2px rgb(207, 205, 203);
+}
+
+.profile .profile_info {
+    position: relative;
+    width: 500px;
+    top: 80px;
+    height: 300px;
+    margin: 10px 10px;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.profile .profile_info H2 {
+    text-align: center;
+    color: #dc3545 !important;
+}
+
+.profile .profile_info p {
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.profile_image img {
+    width: 400px;
+    filter: blur(3px);
+    border-radius: 8px;
+    box-shadow: 6px 6px 6px rgb(167, 166, 166);
+}
+
+.profile_image img:hover {
+    width: 400px;
+    filter: blur(0);
+}
+
+.study_ingo_bg .study_info {
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    color: black !important;
+    margin: 20px auto !important;
+    background-color: #b5b3b363;
+    width: 800px;
+    padding: 10px;
+}
+
+.edu {
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.study_ingo_bg .study_info h4 {
+    color: white !important;
+}
+
+.study_ingo_bg .study_info label {
+    font-weight: bold;
+}
+
+
+/* <!-- study area end    --> */
+
+
+/* project area */
+
+.projects {
+    width: 1000px;
+    margin: 10px auto;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.project {
+    width: 300px;
+    margin: 10px;
+    box-sizing: border-box;
+    align-items: center !important;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 6px 6px 6px rgb(167, 166, 166);
+}
+
+.project .project_img {
+    overflow: hidden;
+    width: 300px;
+    border-radius: 8px;
+}
+
+.project .project_img img {
+    width: 100% !important;
+    transition: 1s all ease-in-out;
+}
+
+.project .project_img:hover img {
+    transform: scale(1.5);
+}
+
+.project .project_info {
+    padding: 10px;
+    width: 300px;
+    text-align: center !important;
+}
+
+.project .project_info h4 {
+    color: #dc3545 !important;
+}
+
+
+/* ============================================================================================================================ */
+
+@media only screen and (max-width: 480px) {
+    .a.get-start-btn {
+        display: block;
+        margin-top: 15px !important;
+        margin-left: 0 !important;
+    }
+    .main-search-bar {
+        padding-top: 50px !important;
+        padding-bottom: 15px !important;
+        background-position: left !important;
+    }
+    .company-logo ul {
+        margin: 0px 32px !important;
+        padding: 0;
+        text-align: left !important;
+    }
+    .user-dashboard {
+        width: 100% !important;
+    }
+    .menu-itam-holder .quantity {
+        right: 0 !important;
+        margin-top: -30px !important;
+    }
+    .tab-content {
+        width: 100% !important;
+    }
+    .image-holder+.text-holder+.price-holder {
+        top: 30px !important;
+    }
+    .table.opening_hours {
+        width: 100% !important;
+    }
+    .table td {
+        padding: 0.3rem !important;
+    }
+    /* virat raj responsive profile */
+    .profile {
+        width: 360px !important;
+    }
+    .profile_image img {
+        width: 160px !important;
+    }
+    .profile .profile_info {
+        width: 290px !important;
+        top: 4px !important;
+    }
+    .profile .profile_info p {
+        padding: 5px !important;
+        font-weight: 500 !important;
+    }
+    .study_ingo_bg .study_info {
+        width: 340px !important;
+    }
+    .projects {
+        width: 100% !important;
+    }
+    .project {
+        width: 300px;
+        margin: auto !important;
+        margin-top: 20px !important;
+    }
+}
+
+table td,
+table th {
+    line-height: 1rem !important;
+}

@@ -1,0 +1,117 @@
+{% extends 'base.html'%} {% block content %} {%load static %} {%include 'includes/alert.html'%}
+<style>
+    .card {
+        width: 4cm;
+        margin: 1cm;
+    }
+    
+    #row {
+        display: flex;
+    }
+    
+    #colum {
+        display: flex;
+        flex-wrap: wrap;
+    }
+</style>
+
+<!-- Main Section Start -->
+<div class="main-section">
+    {%include 'includes/cover.html'%}
+    <div class="page-section account-header buyer-logged-in">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                    <!--							load side bar form v_sidebar-->
+                    {%include 'includes/v_sidebar.html'%}
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                    <div class="user-dashboard loader-holder ">
+                        <div class="user-holder">
+                            <h5 class="text-uppercase">Overview</h5>
+                            <p>Logged in as: <b>{{user.email}}</b> </p>
+                            <div class="row" id="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="colum">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            Total order
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <a href="#">
+                                                <h5 class="card-title">{{order_count}}</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            Total Revenue
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <a href="#">
+                                                <h5 class="card-title"> {{total_revenue | floatformat:2}} ₹</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            This Month
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <a href="#">
+                                                <h5 class="card-title">{{current_month_revenue}} ₹</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <h5 class="text-uppercase">Recent Orders</h5>
+
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="user-orders-list">
+                                        <div class="responsive-table">
+                                            <table id="myOrdersTable" class="table table-hover" style="width: 102%;">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Order#</th>
+                                                        <th scope="col">Name</th>
+                                                        <th scope="col">Total</th>
+                                                        <th scope="col">Status</th>
+                                                        <th scope="col">Date</th>
+                                                        <th scope="col">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% for order in recent_order%}
+                                                    <tr>
+                                                        <td><b><a href="{% url 'order_detail' order.order_number %}" class="text-dark">{{order.order_number}}</a></b></td>
+                                                        <td>{{order.name}}</td>
+                                                        <td>{{order.get_total_by_vendor.grand_total}} ₹</td>
+                                                        <td>{{order.status}}</td>
+                                                        <td>{{order.created_at}}</td>
+                                                        <td>
+                                                            <a href="{% url 'vendor_order_detail' order.order_number %}" class="btn btn-danger">Details</a>
+                                                        </td>
+                                                    </tr>
+                                                    {%endfor%}
+
+                                                </tbody>
+                                            </table>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Main Section End -->
+{% endblock%}

@@ -1,0 +1,9 @@
+<changelist name="Changes" date="1672512194780" recycled="false">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/shelved.patch" />
+  <option name="DESCRIPTION" value="Changes" />
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="GDAL-3.4.3-cp310-cp310-win_amd64.whl" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/GDAL-3.4.3-cp310-cp310-win_amd64.whl" />
+  </binary>
+</changelist>
