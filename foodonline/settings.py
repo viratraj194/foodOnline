@@ -1,6 +1,9 @@
 from pathlib import Path
 import os
 from django.db.models import BigAutoField
+from decouple import config
+from django import conf
+
 
 
 
@@ -12,10 +15,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '*8_6y5k5a6w3(-1r*6sa-jh_c!llj&oz+(d!i&b_-&na%fe34p'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'True'
+DEBUG = config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = ['172.105.58.30','127.0.0.1','desibhojan.shop','www.desibhojan.shop']
 
@@ -83,10 +86,10 @@ WSGI_APPLICATION = 'foodonline.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'foodonline',
-        'USER': 'postgres',
-        'PASSWORD': '7070158485',
-        'HOST': 'localhost',
+        'NAME': config('DB_NAME'),
+       'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
     }
 }
 
@@ -142,31 +145,29 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 #email configuration
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER ='rajofficial513@gmail.com'
-EMAIL_HOST_PASSWORD = 'qxqmxsywxvpqxgmx'
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT', cast=int)
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'foodonline Marketplace <rajofficial513@gmail.com>'
 
 
-GOOGLE_API_KEY = 'AIzaSyDDnv36aSn8Ksv2FNb_YR-HPlsue0VGr-s'
+GOOGLE_API_KEY = config('GOOGLE_API_KEY')
 
 DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 
-
-if DEBUG == True:
-    os.environ['PATH'] = os.path.join(BASE_DIR, 'venv\Lib\site-packages\osgeo') + ';' + os.environ['PATH']
-    os.environ['PROJ_LIB'] = os.path.join(BASE_DIR, 'venv\Lib\site-packages\osgeo\data\proj') + ';' + os.environ['PATH']
-    GDAL_LIBRARY_PATH = os.path.join(BASE_DIR, 'venv\Lib\site-packages\osgeo\gdal304.dll')
+os.environ['PATH'] = os.path.join(BASE_DIR, 'venv\Lib\site-packages\osgeo') + ';' + os.environ['PATH']
+os.environ['PROJ_LIB'] = os.path.join(BASE_DIR, 'venv\Lib\site-packages\osgeo\data\proj') + ';' + os.environ['PATH']
+GDAL_LIBRARY_PATH = os.path.join(BASE_DIR, 'venv\Lib\site-packages\osgeo\gdal304.dll')
 
 
 
 
-PAYPAL_CLINT_ID = 'AXfyS-RTg6uhsghPMQxLampg6iLFtKov_9Vn_uhHgX379oaaLsEueBh7fMNV2lspOjUVqcRAsSXeTwHd'
+PAYPAL_CLINT_ID = config('PAYPAL_CLINT_ID')
 
-RZP_KEY_ID = 'rzp_test_nVilJHkobwgrOf'
-RZP_KEY_SECRET = 'zc8SEqaAd9UyNXFQm5cf5GYJ'
+RZP_KEY_ID = config('RZP_KEY_ID')
+RZP_KEY_SECRET = config('RZP_KEY_SECRET')
 
 
 SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin-allow-popups'
