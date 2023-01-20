@@ -224,6 +224,7 @@ table>tbody>tr>td {
     }
     .user-dashboard {
         width: 100% !important;
+        box-sizing: border-box !important;
     }
     .menu-itam-holder .quantity {
         right: 0 !important;
@@ -279,9 +280,9 @@ table>tbody>tr>td {
     .order_detail {
         flex-direction: column !important;
     }
-    .order_details_dashboard {
+    /* .order_details_dashboard {
         width: 115% !important;
-    }
+    } */
 }
 
 table td,
