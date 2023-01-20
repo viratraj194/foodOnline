@@ -268,7 +268,7 @@ table>tbody>tr>td {
         margin-top: 20px !important;
     }
     #order_details #image {
-        width: 275px !important;
+        width: 200px !important;
     }
     #order_details .text-right {
         text-align: left !important;
@@ -278,6 +278,9 @@ table>tbody>tr>td {
     }
     .order_detail {
         flex-direction: column !important;
+    }
+    .order_details_dashboard {
+        width: 115% !important;
     }
 }
 
