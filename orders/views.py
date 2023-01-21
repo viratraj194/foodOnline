@@ -195,7 +195,7 @@ def payments(request):
                 send_notification(mail_subjects,mail_template,context)
 
         # clear teh cart if the payment is success
-        # cart_items.delete()
+        cart_items.delete()
         response = {
             'order_number':order_number,
             'transaction_id':transaction_id,

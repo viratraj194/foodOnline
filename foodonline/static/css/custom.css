@@ -95,7 +95,7 @@ table>tbody>tr>td {
 .profile .profile_info {
     position: relative;
     width: 500px;
-    top: 80px;
+    top: 0px;
     height: 300px;
     margin: 10px 10px;
     align-items: center !important;
@@ -110,7 +110,7 @@ table>tbody>tr>td {
 .profile .profile_info p {
     text-align: center;
     padding: 20px;
-    font-weight: bold;
+    font-weight: 500;
     justify-content: center;
 }
 
@@ -245,9 +245,12 @@ table>tbody>tr>td {
     /* virat raj responsive profile */
     .profile {
         width: 360px !important;
+        height: 1000px !important;
     }
     .profile_image img {
         width: 160px !important;
+        position: relative !important;
+        top: 195px !important;
     }
     .profile .profile_info {
         width: 290px !important;
