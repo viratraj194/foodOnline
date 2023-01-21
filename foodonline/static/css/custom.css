@@ -95,7 +95,6 @@ table>tbody>tr>td {
 .profile .profile_info {
     position: relative;
     width: 500px;
-    top: 0px;
     height: 300px;
     margin: 10px 10px;
     align-items: center !important;
@@ -254,7 +253,6 @@ table>tbody>tr>td {
     }
     .profile .profile_info {
         width: 290px !important;
-        top: 4px !important;
     }
     .profile .profile_info p {
         padding: 5px !important;
