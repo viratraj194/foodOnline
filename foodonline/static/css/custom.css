@@ -251,7 +251,6 @@ table>tbody>tr>td {
     }
     .profile .profile_info {
         width: 290px !important;
-        top: 0px !important;
         height: 800px;
     }
     .profile .profile_info p {
