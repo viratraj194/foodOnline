@@ -244,7 +244,6 @@ table>tbody>tr>td {
     /* virat raj responsive profile */
     .profile {
         width: 360px !important;
-        height: 1000px !important;
     }
     .profile_image img {
         width: 160px !important;
@@ -253,6 +252,8 @@ table>tbody>tr>td {
     }
     .profile .profile_info {
         width: 290px !important;
+        top: 0px !important;
+        height: 800px;
     }
     .profile .profile_info p {
         padding: 5px !important;
