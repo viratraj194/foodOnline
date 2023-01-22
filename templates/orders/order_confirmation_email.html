@@ -76,7 +76,7 @@
                     </td>
                     <td>
                         <p style="margin: 0;">{{food.fooditem}}</p>
-                        <small><a href="http://{{desibhojan.shop}}{% url 'vendor_detail' food.fooditem.vendor.vendor_slug %}" style="color: #ccc;">{{food.fooditem.vendor.vendor_name}}</a></small>
+                        <small><a href="http://{{domain}}{% url 'vendor_detail' food.fooditem.vendor.vendor_slug %}" style="color: #ccc;">{{food.fooditem.vendor.vendor_name}}</a></small>
                     </td>
                     <td>{{food.quantity}}</td>
                     <td>{{food.price}}</td>
