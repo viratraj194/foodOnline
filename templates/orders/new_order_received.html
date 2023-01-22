@@ -35,7 +35,7 @@
         <table role="presentation" width="100%">
             <tr>
                 <td align="center" style="color: white;">
-                    <img alt="Logo" src="https://rathank.com/foodonline/logo/logo.png" width="400px" align="middle">
+                    <img alt="Logo" src="https://desibhojan.shop/static/logo/virat_logo.png" width="400px" align="middle">
                 </td>
         </table>
 
@@ -71,12 +71,12 @@
                 {% for food in ordered_food_to_vendor %}
                 <tr>
                     <td>
-                        <img src="http://{{domain}}{{food.fooditem.image.url}}" alt="Food Image" width="60">
+                        <img src="http://{{desibhojan.shop}}{{food.fooditem.image.url}}" alt="Food Image" width="60">
 
                     </td>
                     <td>
                         <p style="margin: 0;">{{food.fooditem}}</p>
-                        <small><a href="http://{{domain}}{% url 'vendor_detail' food.fooditem.vendor.vendor_slug %}" style="color: #ccc;">{{food.fooditem.vendor.vendor_name}}</a></small>
+                        <small><a href="http://{{desibhojan.shop}}{% url 'vendor_detail' food.fooditem.vendor.vendor_slug %}" style="color: #ccc;">{{food.fooditem.vendor.vendor_name}}</a></small>
                     </td>
                     <td>{{food.quantity}}</td>
                     <td>{{food.price}}</td>
