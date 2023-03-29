@@ -10,6 +10,7 @@ def generate_order_number(pk):
 
 def order_total_by_vendor(order,vendor_id):
     total_data = json.loads(order.total_data)
+    print(total_data)
     data = total_data.get(str(vendor_id))
     subtotal = 0
     tax = 0

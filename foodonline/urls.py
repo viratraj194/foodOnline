@@ -22,7 +22,8 @@ urlpatterns = [
 
     # orders
     path('orders/',include('orders.urls')),
-        #virat profile
+    
+    #virat profile
     path('virat_profile/',views.virat_profile,name='virat_profile')
 
 

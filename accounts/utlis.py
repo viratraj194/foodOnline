@@ -5,6 +5,8 @@ from django.utils.encoding import force_bytes
 from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import EmailMessage
 from django.conf import settings
+
+
 def detectUser(user):
     if user.role == 1:
         redirectUrl = 'vendorDashboard'
@@ -16,6 +18,7 @@ def detectUser(user):
     elif user.role == None and user.is_superadmin:
         redirectUrl = '/admin'
         return redirectUrl
+
 
 def send_verification_email(request, user, mail_subject, mail_template):
     from_email = settings.DEFAULT_FROM_EMAIL

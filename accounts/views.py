@@ -179,7 +179,7 @@ def vendorDashboard(request):
     current_month_revenue = 0
     for i in current_month_orders:
         current_month_revenue += i.get_total_by_vendor()['grand_total']
-    print(current_month_revenue)
+
     #total revenue
     total_revenue = 0
     for i in orders:
