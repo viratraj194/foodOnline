@@ -26,12 +26,13 @@ def place_order(request):
     cart_count = cart_items.count()
     if cart_count <= 0:
         return redirect('marketplace')
+
     vendors_ids = []
     for i in cart_items:
         if i.fooditem.vendor.id not in vendors_ids:
             vendors_ids.append(i.fooditem.vendor.id)
-
-
+    
+    # {"vendor_id":{"subtotal":{"tax_type": {"tax_percentage": "tax_amount"}}}}
     get_tax = Tax.objects.filter(is_active=True)
     subtotal = 0
     total_data = {}
@@ -46,7 +47,8 @@ def place_order(request):
         else:
             subtotal = (fooditem.price * i.quantities)
             k[v_id] = subtotal
-        #calculate the tax data
+    
+        # Calculate the tax_data
         tax_dict = {}
         for i in get_tax:
             tax_type = i.tax_type
@@ -54,8 +56,7 @@ def place_order(request):
             tax_amount = round((tax_percentage * subtotal)/100, 2)
             tax_dict.update({tax_type: {str(tax_percentage) : str(tax_amount)}})
         # Construct total data
-        # vendor = Vendor.objects.get_or_create(user=request.user)[0]
-        total_data.update({request.user.id: {str(subtotal): str(tax_dict)}})    
+        total_data.update({fooditem.vendor.id: {str(subtotal): str(tax_dict)}})
 
     
 
@@ -188,9 +189,9 @@ def payments(request):
                     'order':order,
                     'to_email':i.fooditem.vendor.user.email,
                     'ordered_food_to_vendor':ordered_food_to_vendor,
-                    # 'vendor_subtotal':order_total_by_vendor(order,i.fooditem.vendor.id)['subtotal'],
-                    # 'tax_data':order_total_by_vendor(order,i.fooditem.vendor.id)['tax_dict'],
-                    # 'vendor_grand_total':order_total_by_vendor(order,i.fooditem.vendor.id)['grand_total'],
+                    'vendor_subtotal':order_total_by_vendor(order,i.fooditem.vendor.id)['subtotal'],
+                    'tax_data':order_total_by_vendor(order,i.fooditem.vendor.id)['tax_dict'],
+                    'vendor_grand_total':order_total_by_vendor(order,i.fooditem.vendor.id)['grand_total'],
                 }
                 send_notification(mail_subjects,mail_template,context)
 

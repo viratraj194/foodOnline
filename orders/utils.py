@@ -8,30 +8,29 @@ def generate_order_number(pk):
     return order_number     
 
 
-def order_total_by_vendor(order,vendor_id):
+def order_total_by_vendor(order, vendor_id):
     total_data = json.loads(order.total_data)
-    print(total_data)
     data = total_data.get(str(vendor_id))
     subtotal = 0
     tax = 0
-    tax_dict = {}   
-    for key,val in data.items():
-                subtotal +=float( key)
-                val = val.replace("'",'"')
-                val = json.loads(val)
-                tax_dict.update(val)
-                #calculate tax
-                #{'CGST': {'6.00': '26.40'}, 'SGST': {'9.00': '39.60'}}
-                for i in val:
-                    for j in val[i]:
-                        tax += float(val[i][j])
-    grand_total = float(subtotal ) + float(tax)
-        
+    tax_dict = {}
+
+    for key, val in data.items():
+        subtotal += float(key)
+        val = val.replace("'", '"')
+        val = json.loads(val)
+        tax_dict.update(val)
+
+        # calculate tax
+        # {'CGST': {'9.00': '6.03'}, 'SGST': {'7.00': '4.69'}}
+        for i in val:
+            for j in val[i]:
+                tax += float(val[i][j])
+    grand_total = float(subtotal) + float(tax)
     context = {
-            'subtotal':subtotal,
-            'tax':tax,
-            'tax_dict':tax_dict,
-            'grand_total':grand_total,
-        }
+        'subtotal': subtotal,
+        'tax_dict': tax_dict, 
+        'grand_total': grand_total,
+    }
 
     return context
