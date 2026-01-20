@@ -69,3 +69,16 @@
    ```bash
    git clone [https://github.com/viratraj194/FoodOnline.git](https://github.com/viratraj194/FoodOnline.git)
    cd FoodOnline
+   python -m venv venv
+   source venv/bin/activate # Windows: venv\Scripts\activate
+   pip install -r requirements.txt
+   Environment Variables: Create a .env file and add your:
+   GOOGLE_API_KEY
+   EMAIL_HOST_USER (Gmail)
+   DB_NAME, DB_USER, DB_PASSWORD
+   python manage.py makemigrations
+   python manage.py migrate
+   python manage.py runserver
+
+
+<div align="center"> <p>Developed with ❤️ by <a href="https://github.com/viratraj194">Virat Raj</a></p> </div>
